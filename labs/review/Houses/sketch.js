@@ -15,24 +15,26 @@ function draw() {
   fill(255, 255, 0);
   ellipse(700, 80, 80, 80);
 
-  drawHouse(100, 250, 100, 100, 3);
-  drawHouse(250, 250, 200, 200, 5);
-  drawHouse(450, 250, 200, 300, 2);
-  drawHouse(600, 250, 100, 100, 3);
-}
-
-function drawHouse(x, y, w, h, numWindows) {
-  // house details
+  let x, y, w, h, numWindows;
   let wallColor = color(66, 133, 244);
   let roofColour = color(219, 68, 55);
   let doorColor = color(0);
   let windowColor = color(255, 255, 0);
+  let eaves, doorW, doorH, windowW, windowH, winY, winX;
 
-  // wall
+  //---------------------------------------------------------------------------
+  // House #1
+  //---------------------------------------------------------------------------
+  x = 100;
+  y = 250;
+  w = 100;
+  h = 100;
+  numWindows = 3;
+    // wall
   fill(wallColor);
   rect(x, y, w, h);
   // roof
-  let eaves = w * 0.10;
+  eaves = w * 0.10;
   fill(roofColour);
   triangle(
     x - eaves, y,
@@ -40,8 +42,8 @@ function drawHouse(x, y, w, h, numWindows) {
     x + (w / 2), y - (h / 2)
   );
   // door
-  let doorW = w / 4;
-  let doorH = h / 3;
+  doorW = w / 4;
+  doorH = h / 3;
   fill(doorColor);
   rect(
     x + (w / 2) - (doorW / 2),
@@ -50,12 +52,129 @@ function drawHouse(x, y, w, h, numWindows) {
     doorH
   );
 
-  let windowW = w / (2 * numWindows + 1);
-  let windowH = h / 6;
-  let winY = y + (h / 3) - windowH;
+  windowW = w / (2 * numWindows + 1);
+  windowH = h / 6;
+  winY = y + (h / 3) - windowH;
   fill(windowColor);
   for (let i = 0; i != numWindows; i++) {
-    let winX = x + (i * windowW *2) + windowW;
+    winX = x + (i * windowW *2) + windowW;
+    rect(winX, winY, windowH, windowH);
+  }
+
+  //---------------------------------------------------------------------------
+  // House #2
+  //---------------------------------------------------------------------------
+  x = 250;
+  y = 250;
+  w = 200;
+  h = 200;
+  numWindows = 5;
+  // wall
+  fill(wallColor);
+  rect(x, y, w, h);
+  // roof
+  eaves = w * 0.10;
+  fill(roofColour);
+  triangle(
+    x - eaves, y,
+    x + w + eaves, y,
+    x + (w / 2), y - (h / 2)
+  );
+  // door
+  doorW = w / 4;
+  doorH = h / 3;
+  fill(doorColor);
+  rect(
+    x + (w / 2) - (doorW / 2),
+    y + h - doorH,
+    doorW,
+    doorH
+  );
+
+  windowW = w / (2 * numWindows + 1);
+  windowH = h / 6;
+  winY = y + (h / 3) - windowH;
+  fill(windowColor);
+  for (let i = 0; i != numWindows; i++) {
+    winX = x + (i * windowW *2) + windowW;
+    rect(winX, winY, windowH, windowH);
+  }
+
+  //---------------------------------------------------------------------------
+  // House #3
+  //---------------------------------------------------------------------------
+  x = 450;
+  y = 250;
+  w = 200;
+  h = 300;
+  numWindows = 2;
+  // wall
+  fill(wallColor);
+  rect(x, y, w, h);
+  // roof
+  eaves = w * 0.10;
+  fill(roofColour);
+  triangle(
+    x - eaves, y,
+    x + w + eaves, y,
+    x + (w / 2), y - (h / 2)
+  );
+  // door
+  doorW = w / 4;
+  doorH = h / 3;
+  fill(doorColor);
+  rect(
+    x + (w / 2) - (doorW / 2),
+    y + h - doorH,
+    doorW,
+    doorH
+  );
+
+  windowW = w / (2 * numWindows + 1);
+  windowH = h / 6;
+  winY = y + (h / 3) - windowH;
+  fill(windowColor);
+  for (let i = 0; i != numWindows; i++) {
+    winX = x + (i * windowW *2) + windowW;
+    rect(winX, winY, windowH, windowH);
+  }
+
+  //---------------------------------------------------------------------------
+  // House #4
+  //---------------------------------------------------------------------------
+  x = 600;
+  y = 250;
+  w = 100;
+  h = 100;
+  numWindows = 3;
+  // wall
+  fill(wallColor);
+  rect(x, y, w, h);
+  // roof
+  eaves = w * 0.10;
+  fill(roofColour);
+  triangle(
+    x - eaves, y,
+    x + w + eaves, y,
+    x + (w / 2), y - (h / 2)
+  );
+  // door
+  doorW = w / 4;
+  doorH = h / 3;
+  fill(doorColor);
+  rect(
+    x + (w / 2) - (doorW / 2),
+    y + h - doorH,
+    doorW,
+    doorH
+  );
+
+  windowW = w / (2 * numWindows + 1);
+  windowH = h / 6;
+  winY = y + (h / 3) - windowH;
+  fill(windowColor);
+  for (let i = 0; i != numWindows; i++) {
+    winX = x + (i * windowW *2) + windowW;
     rect(winX, winY, windowH, windowH);
   }
 }
