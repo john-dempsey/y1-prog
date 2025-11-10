@@ -15,10 +15,32 @@ function draw() {
   fill(255, 255, 0);
   ellipse(700, 80, 80, 80);
 
-  drawHouse(100, 250, 100, 100, 3);
-  drawHouse(250, 250, 200, 200, 5);
-  drawHouse(450, 250, 200, 300, 2);
-  drawHouse(600, 250, 100, 100, 3);
+  // drawHouse(100, 250, 100, 100, 3);
+  // drawHouse(250, 250, 200, 150, 5);
+  // drawHouse(500, 250, 150, 180, 2);
+
+  let houseX, houseY, houseW, houseH, windowCount;
+
+  houseX = 100;
+  houseY = 250;
+  houseW = 100;
+  houseH = 100;
+  windowCount = 3;
+  drawHouse(houseX, houseY, houseW, houseH, windowCount);
+
+  houseX = 250;
+  houseY = 250;
+  houseW = 200;
+  houseH = 150;
+  windowCount = 5;
+  drawHouse(houseX, houseY, houseW, houseH, windowCount);
+
+  houseX = 500;
+  houseY = 250;
+  houseW = 150;
+  houseH = 180;
+  windowCount = 2;
+  drawHouse(houseX, houseY, houseW, houseH, windowCount);
 }
 
 function drawHouse(x, y, w, h, numWindows) {
